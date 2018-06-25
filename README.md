@@ -1,2 +1,11 @@
 # project
-I am gonna die
+print("Bienvenido a la página de registros del Personal de Seguridad: Eulen Seguridad. de la Universidad de Ingeniería y Tecnología (UTEC)")
+print("Si desea realizar cualquiera de las siguientes acciones, ingrese el número indicado:")
+print("Registro del ingreso peatonal del personal que labora en la universidad: 1")
+print("Registro del personal que laboran la universidad: 1")
+print("Registro de visitantes: 2")
+print("Registro de la pérdida de objetos: 3")
+print("Registro de alumnos sin carnet: 3")
+print("Registro de ingreso de contratistas: 4")
+print("Registro de las guías de remisión de los proveedores: 5")
+x = int(input("Ingrese el número de la acción a realizar: "))
