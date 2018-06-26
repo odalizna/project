@@ -76,3 +76,60 @@ if accion==1:
                     a=lapellido.index(busqueda)
                     print('El nombre completo de la persona es: {} {} {}, pertenece al area de {}, ingresó a las {} horas y salió a las {} horas'.format(busqueda,lapellido[a].lapellido2[a],larea[a],lingreso[a],lsalida[a]))
 
+if accion==5:
+    #Control de alumnos sin carnet
+    Motivo = ["Pérdida", "Robo", "Olvido"]
+    RegistroCodigo = {}
+    RegistroApellidoP = {}
+    RegistroApellidoM = {}
+    RegistroNombre = {}
+    RegistroCiclo = {}
+    RegistroEspecialidad = {}
+    RegistroMotivo = {}
+
+    pos = -1
+    while pos != 0:
+        Dni = str(input("Ingrese su número de DNI: "))
+        if len(Dni) == 8:
+            aviso = 1
+            while aviso != 0:
+                Codigo = input("Ingrese su código de estudiante: ")
+                if len(Codigo) == 9:
+                    RegistroCodigo[Dni]= Codigo
+                    break
+                else:
+                    print("Ingreso incorrecto de código de estudiante. Intente denuevo.")
+            ApellidoP = str(input("Ingrese su apellido paterno: "))
+            RegistroApellidoP[Dni] = ApellidoP
+            ApellidoM = str(input("Ingrese su apellido materno: "))
+            RegistroApellidoM[Dni] = ApellidoM
+            Nombres = str(input("Ingrese sus nombres: "))
+            RegistroNombre[Dni]=Nombres
+            while aviso != 0:
+                Ciclo = int(input("Ingrese su número de ciclo: "))
+                if 0 <= Ciclo <= 10:
+                    RegistroCiclo[Dni]= Ciclo
+                    break
+                else:
+                    print("Ingrese correctamente el ciclo que cursa")
+            especialidad = str(input("Ingrese du especialidad: "))
+            RegistroEspecialidad[Dni]= especialidad
+            motivo = int(input("Tomando en cuenta que los motivos se encuentran en parámetros como los siguientes: Pérdida = 1, Robo = 2 y Olvido = 3. "
+                                 "Ingrese el motivo por el que no posee Carnet: "))
+            if motivo == 1:
+                MotivoR = Motivo[motivo-1]
+                RegistroMotivo[Dni] = MotivoR
+            elif motivo ==2:
+                MotivoR = Motivo[motivo-1]
+                RegistroMotivo[Dni] = MotivoR
+            elif motivo == 3:
+                MotivoR = Motivo[motivo-1]
+                RegistroMotivo[Dni] = MotivoR
+            print("Si desea registrarse otro presiona 1, si desea culminar el proceso, presiona 2")
+            Opcion = int(input())
+            if Opcion == 1:
+                pass
+            if Opcion ==2:
+                break
+        else:
+            print("Ingrese correctamente su número de DNI")
